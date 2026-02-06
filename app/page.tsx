@@ -288,11 +288,6 @@ export default function Home() {
     },
   ]
 
-  const showNotification = (type: 'success' | 'error' | 'info', message: string) => {
-    setNotification({ type, message })
-    setTimeout(() => setNotification(null), 5000)
-  }
-
   // Navigation
   const NavigationSidebar = () => (
     <div className={`fixed left-0 top-0 h-full bg-slate-900 text-white transition-all duration-300 ${sidebarOpen ? 'w-64' : 'w-0'} overflow-hidden z-50`}>
