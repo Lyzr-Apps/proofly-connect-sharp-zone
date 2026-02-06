@@ -89,6 +89,83 @@ export default function Home() {
   const [loading, setLoading] = useState(false)
   const [notification, setNotification] = useState<{type: 'success' | 'error' | 'info', message: string} | null>(null)
 
+  // Utility: Show inline notification
+  const showNotification = (type: 'success' | 'error' | 'info', message: string) => {
+    setNotification({ type, message })
+    setTimeout(() => setNotification(null), 5000)
+  }
+
+  // Export/Share Functions
+  const handleExportPDF = (title: string, content?: any) => {
+    showNotification('info', 'Generating PDF export...')
+    setTimeout(() => {
+      const blob = new Blob([`Proofly Export - ${title}\n\nGenerated: ${new Date().toLocaleString()}\n\nThis is a placeholder. In production, this would generate a formatted PDF with all data.`], { type: 'text/plain' })
+      const url = URL.createObjectURL(blob)
+      const link = document.createElement('a')
+      link.href = url
+      link.download = `proofly-${title.toLowerCase().replace(/\s+/g, '-')}-${Date.now()}.txt`
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+      URL.revokeObjectURL(url)
+      showNotification('success', 'PDF exported successfully')
+    }, 500)
+  }
+
+  const handleShareLinkedIn = (title: string, url: string) => {
+    const shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`
+    window.open(shareUrl, '_blank', 'width=600,height=600')
+    showNotification('success', 'Opening LinkedIn share dialog')
+  }
+
+  const handleShareTwitter = (title: string, url: string) => {
+    const text = `Check out my verified skill: ${title} on Proofly`
+    const shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`
+    window.open(shareUrl, '_blank', 'width=600,height=600')
+    showNotification('success', 'Opening Twitter share dialog')
+  }
+
+  const handleCopyLink = (url: string) => {
+    navigator.clipboard.writeText(url).then(() => {
+      showNotification('success', 'Link copied to clipboard')
+    }).catch(() => {
+      showNotification('error', 'Failed to copy link')
+    })
+  }
+
+  const handleEmbedCode = (receiptId: string) => {
+    const embedCode = `<iframe src="https://proofly.io/embed/receipt/${receiptId}" width="100%" height="400" frameborder="0"></iframe>`
+    navigator.clipboard.writeText(embedCode).then(() => {
+      showNotification('success', 'Embed code copied to clipboard')
+    }).catch(() => {
+      showNotification('error', 'Failed to copy embed code')
+    })
+  }
+
+  const handleDownloadResume = (candidateName: string) => {
+    showNotification('info', `Downloading resume for ${candidateName}...`)
+    setTimeout(() => {
+      showNotification('success', 'Resume download started')
+    }, 500)
+  }
+
+  const handleExportComparison = () => {
+    showNotification('info', 'Exporting comparison data...')
+    setTimeout(() => {
+      const csvContent = 'Candidate,Trust Score,Total Receipts,Top Skills\nAlex Chen,78,5,"React, TypeScript, Node.js"\nJordan Smith,85,7,"Python, Django, PostgreSQL"'
+      const blob = new Blob([csvContent], { type: 'text/csv' })
+      const url = URL.createObjectURL(blob)
+      const link = document.createElement('a')
+      link.href = url
+      link.download = `proofly-comparison-${Date.now()}.csv`
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+      URL.revokeObjectURL(url)
+      showNotification('success', 'Comparison exported as CSV')
+    }, 500)
+  }
+
   // Mock data - in production, this would come from agent responses
   const mockTrustScore: TrustScore = {
     score: 78,
@@ -1366,11 +1443,14 @@ const handleSubmit = async (data: FormData) => {
             Back to Dashboard
           </Button>
           <div className="flex gap-2">
-            <Button variant="outline">
+            <Button
+              variant="outline"
+              onClick={() => handleExportPDF(`Receipt-${receipt.receipt_id}`, receipt)}
+            >
               <FiDownload className="mr-2" />
               Download PDF
             </Button>
-            <Button>
+            <Button onClick={() => handleCopyLink(receipt.public_url)}>
               <FiShare2 className="mr-2" />
               Share
             </Button>
@@ -1498,19 +1578,35 @@ const handleSubmit = async (data: FormData) => {
             </CardHeader>
             <CardContent>
               <div className="flex gap-3">
-                <Button variant="outline" className="flex-1">
+                <Button
+                  variant="outline"
+                  className="flex-1"
+                  onClick={() => handleShareLinkedIn(receipt.task_title, receipt.public_url)}
+                >
                   <FiShare2 className="mr-2" />
                   LinkedIn
                 </Button>
-                <Button variant="outline" className="flex-1">
+                <Button
+                  variant="outline"
+                  className="flex-1"
+                  onClick={() => handleShareTwitter(receipt.task_title, receipt.public_url)}
+                >
                   <FiShare2 className="mr-2" />
                   Twitter
                 </Button>
-                <Button variant="outline" className="flex-1">
+                <Button
+                  variant="outline"
+                  className="flex-1"
+                  onClick={() => handleCopyLink(receipt.public_url)}
+                >
                   <FiCopy className="mr-2" />
                   Copy Link
                 </Button>
-                <Button variant="outline" className="flex-1">
+                <Button
+                  variant="outline"
+                  className="flex-1"
+                  onClick={() => handleEmbedCode(receipt.receipt_id)}
+                >
                   <FiCode className="mr-2" />
                   Embed
                 </Button>
@@ -1578,11 +1674,17 @@ const handleSubmit = async (data: FormData) => {
                 </div>
               </div>
               <div className="flex gap-2">
-                <Button variant="outline">
+                <Button
+                  variant="outline"
+                  onClick={() => handleCopyLink(`https://proofly.io/portfolio/${portfolio.student_id}`)}
+                >
                   <FiShare2 className="mr-2" />
                   Share Portfolio
                 </Button>
-                <Button variant="outline">
+                <Button
+                  variant="outline"
+                  onClick={() => handleExportPDF(`Portfolio-${portfolio.name}`, portfolio)}
+                >
                   <FiDownload className="mr-2" />
                   Export PDF
                 </Button>
@@ -2101,7 +2203,7 @@ const handleSubmit = async (data: FormData) => {
         <div className="mb-6 flex items-center justify-between">
           <h2 className="text-2xl font-bold">Compare Candidates</h2>
           <div className="flex gap-2">
-            <Button variant="outline">
+            <Button variant="outline" onClick={handleExportComparison}>
               <FiDownload className="mr-2" />
               Export Comparison
             </Button>
@@ -2242,15 +2344,33 @@ const handleSubmit = async (data: FormData) => {
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-2">
-                      <Button variant="outline" size="sm" className="w-full justify-start">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="w-full justify-start"
+                        onClick={() => window.open(candidate.portfolio_url, '_blank')}
+                      >
                         <FiEye className="mr-2" size={14} />
                         View Full Portfolio
                       </Button>
-                      <Button variant="outline" size="sm" className="w-full justify-start">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="w-full justify-start"
+                        onClick={() => handleDownloadResume(candidate.name)}
+                      >
                         <FiDownload className="mr-2" size={14} />
                         Download Resume
                       </Button>
-                      <Button variant="outline" size="sm" className="w-full justify-start">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="w-full justify-start"
+                        onClick={() => {
+                          setSelectedCandidates(selectedCandidates.filter(cid => cid !== id))
+                          showNotification('info', `${candidate.name} removed from comparison`)
+                        }}
+                      >
                         <FiX className="mr-2" size={14} />
                         Remove from Comparison
                       </Button>
