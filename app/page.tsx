@@ -2230,31 +2230,36 @@ const handleSubmit = async (data: FormData) => {
         </Card>
 
         {/* Quick Actions */}
-        <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
-          {selectedCandidates.map((id) => {
-            const candidate = mockCandidates.find(c => c.student_id === id)
-            return candidate ? (
-              <Card key={id}>
-                <CardContent className="pt-4">
-                  <h4 className="font-semibold mb-3">{candidate.name}</h4>
-                  <div className="space-y-2">
-                    <Button variant="outline" size="sm" className="w-full">
-                      <FiEye className="mr-2" size={14} />
-                      View Full Portfolio
-                    </Button>
-                    <Button variant="outline" size="sm" className="w-full">
-                      <FiDownload className="mr-2" size={14} />
-                      Download Resume
-                    </Button>
-                    <Button variant="outline" size="sm" className="w-full">
-                      <FiX className="mr-2" size={14} />
-                      Remove from Comparison
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ) : null
-          })}
+        <div className="mt-6">
+          <h3 className="text-lg font-semibold mb-4">Quick Actions</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {selectedCandidates.map((id) => {
+              const candidate = mockCandidates.find(c => c.student_id === id)
+              return candidate ? (
+                <Card key={id}>
+                  <CardHeader>
+                    <CardTitle className="text-base">{candidate.name}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-2">
+                      <Button variant="outline" size="sm" className="w-full justify-start">
+                        <FiEye className="mr-2" size={14} />
+                        View Full Portfolio
+                      </Button>
+                      <Button variant="outline" size="sm" className="w-full justify-start">
+                        <FiDownload className="mr-2" size={14} />
+                        Download Resume
+                      </Button>
+                      <Button variant="outline" size="sm" className="w-full justify-start">
+                        <FiX className="mr-2" size={14} />
+                        Remove from Comparison
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              ) : null
+            })}
+          </div>
         </div>
       </div>
     )
