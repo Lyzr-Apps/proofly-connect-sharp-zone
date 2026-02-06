@@ -1,0 +1,33 @@
+{
+  "agent_name": "Session Monitor",
+  "agent_id": "698592c7e17e33c11eed1a75",
+  "test_message": "Analyze this session activity: Student worked for 45 minutes total. Large code paste detected at timestamp 00:32:15. Extended periods of no activity from 00:10:00 to 00:25:00.",
+  "expected_purpose": "Gather behavioral context during task execution",
+  "timestamp": "2026-02-06T07:11:50.762694",
+  "is_valid_json": true,
+  "validation_errors": [],
+  "actual_response": {
+    "status": "success",
+    "result": {
+      "session_id": "unique session identifier",
+      "student_id": "mem_cmlafyhi038ah0spd1f4sf0ld",
+      "behavioral_context": {
+        "keystroke_patterns": "Typing was minimal, with a large code paste detected.",
+        "timing_analysis": "Student worked for 45 minutes with an extended period of no activity from 00:10:00 to 00:25:00.",
+        "activity_summary": "A large code paste occurred at timestamp 00:32:15.",
+        "context_notes": [
+          "Extended periods of no activity require context.",
+          "Large code paste highlighted for review."
+        ]
+      },
+      "requires_human_review": true,
+      "context_level": "highlighted_for_review",
+      "transparency_note": "Student was informed of all data collection"
+    },
+    "metadata": {
+      "agent_name": "Session Monitor",
+      "timestamp": "2023-10-05T10:00:00Z"
+    }
+  },
+  "raw_response": "{\n  \"status\": \"success\",\n  \"result\": {\n    \"session_id\": \"unique session identifier\",\n    \"student_id\": \"mem_cmlafyhi038ah0spd1f4sf0ld\",\n    \"behavioral_context\": {\n      \"keystroke_patterns\": \"Typing was minimal, with a large code paste detected.\",\n      \"timing_analysis\": \"Student worked for 45 minutes with an extended period of no activity from 00:10:00 to 00:25:00.\",\n      \"activity_summary\": \"A large code paste occurred at timestamp 00:32:15.\",\n      \"context_notes\": [\n        \"Extended periods of no activity require context.\",\n        \"Large code paste highlighted for review.\"\n      ]\n    },\n    \"requires_human_review\": true,\n    \"context_level\": \"highlighted_for_review\",\n    \"transparency_note\": \"Student was informed of all data collection\"\n  },\n  \"metadata\": {\n    \"agent_name\": \"Session Monitor\",\n    \"timestamp\": \"2023-10-05T10:00:00Z\"\n  }\n}"
+}

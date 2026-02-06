@@ -1,0 +1,51 @@
+{
+  "agent_name": "Review Assistant",
+  "agent_id": "698593191caa4e686dd66f21",
+  "test_message": "Present review context for submission #7842. Code quality: 86/100. Behavior observations: Large paste at 32min, extended thinking period. Student explanation: 'Worked offline in VS Code then pasted.' Similarity: 12% common patterns.",
+  "expected_purpose": "Help companies make fair review decisions",
+  "timestamp": "2026-02-06T07:12:05.965368",
+  "is_valid_json": true,
+  "validation_errors": [],
+  "actual_response": {
+    "status": "success",
+    "result": {
+      "review_package_id": "review_package_7842",
+      "submission_summary": {
+        "student_id": "student_7842",
+        "task_name": "Code Quality Assessment",
+        "technical_score": 86
+      },
+      "student_explanation": "Worked offline in VS Code then pasted.",
+      "behavioral_observations": {
+        "context_level": "standard",
+        "neutral_observations": [
+          "Large paste at 32min",
+          "Extended thinking period"
+        ],
+        "ai_confidence": 88
+      },
+      "fairness_reminders": [
+        "Behavioral patterns may have legitimate explanations",
+        "Consider the student's explanation carefully",
+        "When in doubt, request an oral defense for clarity",
+        "Justification required for all flagged decisions",
+        "Students have the right to appeal"
+      ],
+      "decision_requirements": {
+        "justification_required": false,
+        "oral_defense_option": true,
+        "appeal_rights": "Students can appeal by submitting a written request within 7 days."
+      },
+      "recommended_actions": [
+        "Approve the submission given the technical score and reasonable explanation.",
+        "If unsure, consider requesting an oral defense for further clarification."
+      ],
+      "reviewer_guidance": "Ensure fair decision-making by thoroughly reviewing the student's explanation and considering legitimate reasons for observed behaviors."
+    },
+    "metadata": {
+      "agent_name": "Review Assistant",
+      "timestamp": "2023-10-05T16:00:00Z"
+    }
+  },
+  "raw_response": "{\n  \"status\": \"success\",\n  \"result\": {\n    \"review_package_id\": \"review_package_7842\",\n    \"submission_summary\": {\n      \"student_id\": \"student_7842\",\n      \"task_name\": \"Code Quality Assessment\",\n      \"technical_score\": 86\n    },\n    \"student_explanation\": \"Worked offline in VS Code then pasted.\",\n    \"behavioral_observations\": {\n      \"context_level\": \"standard\",\n      \"neutral_observations\": [\n        \"Large paste at 32min\",\n        \"Extended thinking period\"\n      ],\n      \"ai_confidence\": 88\n    },\n    \"fairness_reminders\": [\n      \"Behavioral patterns may have legitimate explanations\",\n      \"Consider the student's explanation carefully\",\n      \"When in doubt, request an oral defense for clarity\",\n      \"Justification required for all flagged decisions\",\n      \"Students have the right to appeal\"\n    ],\n    \"decision_requirements\": {\n      \"justification_required\": false,\n      \"oral_defense_option\": true,\n      \"appeal_rights\": \"Students can appeal by submitting a written request within 7 days.\"\n    },\n    \"recommended_actions\": [\n      \"Approve the submission given the technical score and reasonable explanation.\",\n      \"If unsure, consider requesting an oral defense for further clarification.\"\n    ],\n    \"reviewer_guidance\": \"Ensure fair decision-making by thoroughly reviewing the student's explanation and considering legitimate reasons for observed behaviors.\"\n  },\n  \"metadata\": {\n    \"agent_name\": \"Review Assistant\",\n    \"timestamp\": \"2023-10-05T16:00:00Z\"\n  }\n}"
+}

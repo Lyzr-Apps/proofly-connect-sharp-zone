@@ -1,0 +1,87 @@
+{
+  "agent_name": "Task Variant Generator",
+  "agent_id": "698592afe5d25ce3f598cb71",
+  "agent_purpose": "task_variant_generation",
+  "description": "Generates unique task variants with personalized parameters, datasets, and constraints for fair skill assessment",
+  "response_schema": {
+    "status": "string",
+    "result": {
+      "variant_id": "string",
+      "task_title": "string",
+      "parameters": {
+        "dataset": "string",
+        "constraints": [
+          "string"
+        ],
+        "requirements": [
+          "string"
+        ]
+      },
+      "difficulty_level": "string",
+      "estimated_time": "string",
+      "uniqueness_hash": "string"
+    },
+    "metadata": {
+      "agent_name": "string",
+      "timestamp": "string"
+    }
+  },
+  "example_response": {
+    "status": "success",
+    "result": {
+      "variant_id": "etl_pipeline_variant_12345",
+      "task_title": "Data Pipeline Challenge: Advanced ETL Construction",
+      "parameters": {
+        "dataset": "sales_transactions_2023.csv",
+        "constraints": [
+          "Use Python and SQL",
+          "Include error handling for missing data",
+          "Limit execution time to less than 2 hours"
+        ],
+        "requirements": [
+          "Extract transactional data from the provided CSV file",
+          "Transform the data to calculate daily sales totals",
+          "Load the transformed data into a PostgreSQL database"
+        ]
+      },
+      "difficulty_level": "intermediate",
+      "estimated_time": "120 minutes",
+      "uniqueness_hash": "u34nmqan9zpfc5t1"
+    },
+    "metadata": {
+      "agent_name": "Task Variant Generator",
+      "timestamp": "2023-11-29T05:11:21Z"
+    }
+  },
+  "is_actual_tested": true,
+  "test_timestamp": "2026-02-06T07:11:47.754969",
+  "test_message_used": "Hello, provide a sample response",
+  "actual_test_response": {
+    "status": "success",
+    "result": {
+      "variant_id": "etl_pipeline_variant_12345",
+      "task_title": "Data Pipeline Challenge: Advanced ETL Construction",
+      "parameters": {
+        "dataset": "sales_transactions_2023.csv",
+        "constraints": [
+          "Use Python and SQL",
+          "Include error handling for missing data",
+          "Limit execution time to less than 2 hours"
+        ],
+        "requirements": [
+          "Extract transactional data from the provided CSV file",
+          "Transform the data to calculate daily sales totals",
+          "Load the transformed data into a PostgreSQL database"
+        ]
+      },
+      "difficulty_level": "intermediate",
+      "estimated_time": "120 minutes",
+      "uniqueness_hash": "u34nmqan9zpfc5t1"
+    },
+    "metadata": {
+      "agent_name": "Task Variant Generator",
+      "timestamp": "2023-11-29T05:11:21Z"
+    }
+  },
+  "test_passed": true
+}

@@ -1,0 +1,139 @@
+{
+  "agent_name": "Defense Coordinator",
+  "agent_id": "69859377fe576c19864be878",
+  "agent_purpose": "oral_defense_coordination",
+  "description": "Coordinates supportive oral defense sessions that upgrade verification levels through code walkthroughs and understanding demonstration",
+  "response_schema": {
+    "status": "string",
+    "result": {
+      "defense_session_id": "string",
+      "student_id": "string",
+      "submission_id": "string",
+      "session_details": {
+        "scheduled_time": "string",
+        "duration_minutes": "number",
+        "session_type": "string",
+        "current_verification_level": "string",
+        "potential_upgrade_to": "string"
+      },
+      "pre_defense_brief": {
+        "process_explanation": "string",
+        "evaluation_criteria": [
+          "string"
+        ],
+        "support_resources": [
+          "string"
+        ]
+      },
+      "defense_outcome": {
+        "understanding_demonstrated": "boolean",
+        "comprehension_score": "number",
+        "new_verification_level": "string",
+        "authenticity_badge": "string",
+        "defense_notes": "string"
+      },
+      "next_steps": {
+        "verification_upgraded": "boolean",
+        "receipt_generation_triggered": "boolean",
+        "feedback_provided": "string"
+      },
+      "student_support": "string"
+    },
+    "metadata": {
+      "agent_name": "string",
+      "timestamp": "string"
+    }
+  },
+  "example_response": {
+    "status": "success",
+    "result": {
+      "defense_session_id": "session_7842_upgrade",
+      "student_id": "mem_cmlafyhi038ah0spd1f4sf0ld",
+      "submission_id": "7842",
+      "session_details": {
+        "scheduled_time": "2023-11-28T14:00:00Z",
+        "duration_minutes": 30,
+        "session_type": "understanding_verification",
+        "current_verification_level": "Verified with Assistance",
+        "potential_upgrade_to": "Verified Independent Work"
+      },
+      "pre_defense_brief": {
+        "process_explanation": "You will explain your code solution, answer questions about your approach, and discuss how you tackled any challenges.",
+        "evaluation_criteria": [
+          "Problem comprehension",
+          "Code logic explanation",
+          "Problem-solving strategy"
+        ],
+        "support_resources": [
+          "Common questions guide",
+          "Preparation checklist"
+        ]
+      },
+      "defense_outcome": {
+        "understanding_demonstrated": false,
+        "comprehension_score": 85,
+        "new_verification_level": "Verified Independent Work",
+        "authenticity_badge": "Oral Defense Verified",
+        "defense_notes": "The student clearly explained their code and demonstrated an independent understanding of the logic."
+      },
+      "next_steps": {
+        "verification_upgraded": true,
+        "receipt_generation_triggered": true,
+        "feedback_provided": "You effectively communicated your understanding and problem-solving approach."
+      },
+      "student_support": "Great job! Keep practicing to maintain your independent skill level."
+    },
+    "metadata": {
+      "agent_name": "Defense Coordinator",
+      "timestamp": "2023-11-20T10:00:00Z"
+    }
+  },
+  "is_actual_tested": true,
+  "test_timestamp": "2026-02-06T07:12:20.007978",
+  "test_message_used": "Hello, provide a sample response",
+  "actual_test_response": {
+    "status": "success",
+    "result": {
+      "defense_session_id": "session_7842_upgrade",
+      "student_id": "mem_cmlafyhi038ah0spd1f4sf0ld",
+      "submission_id": "7842",
+      "session_details": {
+        "scheduled_time": "2023-11-28T14:00:00Z",
+        "duration_minutes": 30,
+        "session_type": "understanding_verification",
+        "current_verification_level": "Verified with Assistance",
+        "potential_upgrade_to": "Verified Independent Work"
+      },
+      "pre_defense_brief": {
+        "process_explanation": "You will explain your code solution, answer questions about your approach, and discuss how you tackled any challenges.",
+        "evaluation_criteria": [
+          "Problem comprehension",
+          "Code logic explanation",
+          "Problem-solving strategy"
+        ],
+        "support_resources": [
+          "Common questions guide",
+          "Preparation checklist"
+        ]
+      },
+      "defense_outcome": {
+        "understanding_demonstrated": false,
+        "comprehension_score": 85,
+        "new_verification_level": "Verified Independent Work",
+        "authenticity_badge": "Oral Defense Verified",
+        "defense_notes": "The student clearly explained their code and demonstrated an independent understanding of the logic."
+      },
+      "next_steps": {
+        "verification_upgraded": true,
+        "receipt_generation_triggered": true,
+        "feedback_provided": "You effectively communicated your understanding and problem-solving approach."
+      },
+      "student_support": "Great job! Keep practicing to maintain your independent skill level."
+    },
+    "metadata": {
+      "agent_name": "Defense Coordinator",
+      "timestamp": "2023-11-20T10:00:00Z"
+    }
+  },
+  "test_passed": true
+}

@@ -1,0 +1,41 @@
+{
+  "agent_name": "Fairness Guardian",
+  "agent_id": "698592fcf7f7d3ffa5d86538",
+  "test_message": "Validate this negative action request: Reviewer wants to reduce trust score for student. Previous issues on submissions: 1. Is this action permitted?",
+  "expected_purpose": "Enforce ethics and validate pattern requirements",
+  "timestamp": "2026-02-06T07:12:01.691113",
+  "is_valid_json": true,
+  "validation_errors": [],
+  "actual_response": {
+    "status": "success",
+    "result": {
+      "validation_id": "validation_001",
+      "fairness_check": {
+        "bias_detected": true,
+        "bias_description": "Request to reduce trust score based on fewer than the required 3 distinct patterns.",
+        "pattern_count": 1,
+        "meets_3_pattern_requirement": false
+      },
+      "human_review_required": true,
+      "justification_required": true,
+      "student_rights_protected": {
+        "explanation_opportunity": true,
+        "appeal_rights_communicated": true,
+        "neutral_language_verified": true
+      },
+      "decision": "blocked",
+      "guardian_notes": "The action to reduce the trust score is blocked due to insufficient pattern count. At least 3 distinct patterns are required to consider a reduction.",
+      "next_steps": [
+        "Ensure the reviewer identifies at least 3 distinct behavioral patterns before requesting any trust score reduction.",
+        "Assign a human reviewer for justification.",
+        "Provide the student with an opportunity to explain their perspective.",
+        "Communicate appeal rights clearly to the student."
+      ]
+    },
+    "metadata": {
+      "agent_name": "Fairness Guardian",
+      "timestamp": "2023-11-30T16:30:00Z"
+    }
+  },
+  "raw_response": "{\n  \"status\": \"success\",\n  \"result\": {\n    \"validation_id\": \"validation_001\",\n    \"fairness_check\": {\n      \"bias_detected\": true,\n      \"bias_description\": \"Request to reduce trust score based on fewer than the required 3 distinct patterns.\",\n      \"pattern_count\": 1,\n      \"meets_3_pattern_requirement\": false\n    },\n    \"human_review_required\": true,\n    \"justification_required\": true,\n    \"student_rights_protected\": {\n      \"explanation_opportunity\": true,\n      \"appeal_rights_communicated\": true,\n      \"neutral_language_verified\": true\n    },\n    \"decision\": \"blocked\",\n    \"guardian_notes\": \"The action to reduce the trust score is blocked due to insufficient pattern count. At least 3 distinct patterns are required to consider a reduction.\",\n    \"next_steps\": [\"Ensure the reviewer identifies at least 3 distinct behavioral patterns before requesting any trust score reduction.\", \"Assign a human reviewer for justification.\", \"Provide the student with an opportunity to explain their perspective.\", \"Communicate appeal rights clearly to the student.\"]\n  },\n  \"metadata\": {\n    \"agent_name\": \"Fairness Guardian\",\n    \"timestamp\": \"2023-11-30T16:30:00Z\"\n  }\n}"
+}

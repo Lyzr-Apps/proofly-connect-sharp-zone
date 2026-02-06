@@ -1,0 +1,118 @@
+{
+  "agent_name": "Evaluation Manager",
+  "agent_id": "698592e0fe576c19864be864",
+  "agent_purpose": "submission_evaluation_coordination",
+  "description": "Coordinates comprehensive submission evaluation with technical analysis, behavioral context compilation, and appropriate routing for human review",
+  "response_schema": {
+    "status": "string",
+    "result": {
+      "submission_id": "string",
+      "technical_analysis": {
+        "code_quality_score": "number",
+        "functionality_assessment": "string",
+        "strengths": [
+          "string"
+        ],
+        "areas_for_improvement": [
+          "string"
+        ]
+      },
+      "behavioral_context_summary": {
+        "context_level": "string",
+        "observations": [
+          "string"
+        ],
+        "student_explanation": "string"
+      },
+      "similarity_analysis": {
+        "similarity_score": "number",
+        "requires_interpretation": "boolean",
+        "comparison_notes": "string"
+      },
+      "routing_decision": "string",
+      "evaluation_package_ready": "boolean"
+    },
+    "metadata": {
+      "agent_name": "string",
+      "timestamp": "string"
+    }
+  },
+  "example_response": {
+    "status": "success",
+    "result": {
+      "submission_id": "unique submission identifier",
+      "technical_analysis": {
+        "code_quality_score": 86,
+        "functionality_assessment": "The submitted code meets the specified functionality requirements effectively. It is well-structured and logically organized, showing a clear understanding of the problem-solving process.",
+        "strengths": [
+          "Good use of modular design, contributing to readability",
+          "Efficient algorithmic approach, minimizing time complexity"
+        ],
+        "areas_for_improvement": [
+          "Could improve comments for better understanding of complex logic",
+          "Consider more thorough input validation for edge cases"
+        ]
+      },
+      "behavioral_context_summary": {
+        "context_level": "standard",
+        "observations": [
+          "Large paste event",
+          "Extended local development period"
+        ],
+        "student_explanation": "I coded in VS Code locally, then pasted my solution."
+      },
+      "similarity_analysis": {
+        "similarity_score": 0,
+        "requires_interpretation": false,
+        "comparison_notes": "No significant similarities with other submissions detected."
+      },
+      "routing_decision": "standard_review",
+      "evaluation_package_ready": true
+    },
+    "metadata": {
+      "agent_name": "Evaluation Manager",
+      "timestamp": "2023-11-19T18:30:00+00:00"
+    }
+  },
+  "is_actual_tested": true,
+  "test_timestamp": "2026-02-06T07:11:57.276621",
+  "test_message_used": "Hello, provide a sample response",
+  "actual_test_response": {
+    "status": "success",
+    "result": {
+      "submission_id": "unique submission identifier",
+      "technical_analysis": {
+        "code_quality_score": 86,
+        "functionality_assessment": "The submitted code meets the specified functionality requirements effectively. It is well-structured and logically organized, showing a clear understanding of the problem-solving process.",
+        "strengths": [
+          "Good use of modular design, contributing to readability",
+          "Efficient algorithmic approach, minimizing time complexity"
+        ],
+        "areas_for_improvement": [
+          "Could improve comments for better understanding of complex logic",
+          "Consider more thorough input validation for edge cases"
+        ]
+      },
+      "behavioral_context_summary": {
+        "context_level": "standard",
+        "observations": [
+          "Large paste event",
+          "Extended local development period"
+        ],
+        "student_explanation": "I coded in VS Code locally, then pasted my solution."
+      },
+      "similarity_analysis": {
+        "similarity_score": 0,
+        "requires_interpretation": false,
+        "comparison_notes": "No significant similarities with other submissions detected."
+      },
+      "routing_decision": "standard_review",
+      "evaluation_package_ready": true
+    },
+    "metadata": {
+      "agent_name": "Evaluation Manager",
+      "timestamp": "2023-11-19T18:30:00+00:00"
+    }
+  },
+  "test_passed": true
+}

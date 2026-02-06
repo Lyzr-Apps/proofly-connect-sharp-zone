@@ -1,0 +1,244 @@
+{
+  "workflow": {
+    "name": "Proofly Trust-Based Skill Verification Platform",
+    "description": "A fairness-first platform for verified skill portfolio building with transparent behavioral monitoring and human-centered evaluation",
+    "version": "1.0.0",
+    "nodes": [
+      {
+        "id": "input_node",
+        "type": "Input",
+        "label": "User Request",
+        "nodeCategory": "input"
+      },
+      {
+        "id": "task_variant_generator",
+        "type": "Agent",
+        "label": "Task Variant Generator",
+        "nodeCategory": "agent",
+        "agent_id": "698592afe5d25ce3f598cb71",
+        "description": "Generates unique task variants with personalized parameters"
+      },
+      {
+        "id": "session_monitor",
+        "type": "Agent",
+        "label": "Session Monitor",
+        "nodeCategory": "agent",
+        "agent_id": "698592c7e17e33c11eed1a75",
+        "description": "Collects neutral behavioral context during sessions"
+      },
+      {
+        "id": "evaluation_manager",
+        "type": "Agent",
+        "label": "Evaluation Manager",
+        "nodeCategory": "agent",
+        "agent_id": "698592e0fe576c19864be864",
+        "description": "Coordinates comprehensive submission evaluation"
+      },
+      {
+        "id": "fairness_guardian",
+        "type": "Agent",
+        "label": "Fairness Guardian",
+        "nodeCategory": "agent",
+        "agent_id": "698592fcf7f7d3ffa5d86538",
+        "description": "Validates ethical decision-making and enforces fairness rules"
+      },
+      {
+        "id": "review_assistant",
+        "type": "Agent",
+        "label": "Review Assistant",
+        "nodeCategory": "agent",
+        "agent_id": "698593191caa4e686dd66f21",
+        "description": "Facilitates fair human review with context and reminders"
+      },
+      {
+        "id": "trust_score_calculator",
+        "type": "Agent",
+        "label": "Trust Score Calculator",
+        "nodeCategory": "agent",
+        "agent_id": "69859337a791e6e318b8df57",
+        "description": "Calculates improvement-focused trust scores"
+      },
+      {
+        "id": "receipt_generator",
+        "type": "Agent",
+        "label": "Receipt Generator",
+        "nodeCategory": "agent",
+        "agent_id": "69859356fe576c19864be875",
+        "description": "Generates verified skill credentials and receipts"
+      },
+      {
+        "id": "defense_coordinator",
+        "type": "Agent",
+        "label": "Defense Coordinator",
+        "nodeCategory": "agent",
+        "agent_id": "69859377fe576c19864be878",
+        "description": "Coordinates supportive oral defense sessions"
+      },
+      {
+        "id": "output_node",
+        "type": "Output",
+        "label": "Platform Response",
+        "nodeCategory": "end"
+      }
+    ],
+    "edges": [
+      {
+        "source": "input_node",
+        "target": "task_variant_generator",
+        "label": "Start Task"
+      },
+      {
+        "source": "task_variant_generator",
+        "target": "session_monitor",
+        "label": "Begin Session"
+      },
+      {
+        "source": "session_monitor",
+        "target": "evaluation_manager",
+        "label": "Submit Work"
+      },
+      {
+        "source": "evaluation_manager",
+        "target": "fairness_guardian",
+        "label": "Validate Fairness"
+      },
+      {
+        "source": "fairness_guardian",
+        "target": "review_assistant",
+        "label": "Human Review"
+      },
+      {
+        "source": "review_assistant",
+        "target": "trust_score_calculator",
+        "label": "Update Trust Score"
+      },
+      {
+        "source": "trust_score_calculator",
+        "target": "receipt_generator",
+        "label": "Generate Receipt"
+      },
+      {
+        "source": "evaluation_manager",
+        "target": "defense_coordinator",
+        "label": "Request Defense"
+      },
+      {
+        "source": "defense_coordinator",
+        "target": "receipt_generator",
+        "label": "Upgrade Verification"
+      },
+      {
+        "source": "receipt_generator",
+        "target": "output_node",
+        "label": "Complete"
+      }
+    ]
+  },
+  "agents": {
+    "task_variant_generator": {
+      "agent_id": "698592afe5d25ce3f598cb71",
+      "name": "Task Variant Generator",
+      "role": "Task Personalization Specialist",
+      "purpose": "Generate unique task variants for fair skill assessment",
+      "response_schema": "task_variant_generator_response.json"
+    },
+    "session_monitor": {
+      "agent_id": "698592c7e17e33c11eed1a75",
+      "name": "Session Monitor",
+      "role": "Behavioral Context Collector",
+      "purpose": "Collect neutral behavioral observations with transparency",
+      "response_schema": "session_monitor_response.json"
+    },
+    "evaluation_manager": {
+      "agent_id": "698592e0fe576c19864be864",
+      "name": "Evaluation Manager",
+      "role": "Evaluation Coordinator",
+      "purpose": "Coordinate comprehensive submission analysis",
+      "response_schema": "evaluation_manager_response.json"
+    },
+    "fairness_guardian": {
+      "agent_id": "698592fcf7f7d3ffa5d86538",
+      "name": "Fairness Guardian",
+      "role": "Ethics and Fairness Validator",
+      "purpose": "Enforce fairness rules and protect student rights",
+      "response_schema": "fairness_guardian_response.json"
+    },
+    "review_assistant": {
+      "agent_id": "698593191caa4e686dd66f21",
+      "name": "Review Assistant",
+      "role": "Human Review Facilitator",
+      "purpose": "Guide fair human decision-making",
+      "response_schema": "review_assistant_response.json"
+    },
+    "trust_score_calculator": {
+      "agent_id": "69859337a791e6e318b8df57",
+      "name": "Trust Score Calculator",
+      "role": "Trust Metrics Analyst",
+      "purpose": "Calculate improvement-focused trust scores",
+      "response_schema": "trust_score_calculator_response.json"
+    },
+    "receipt_generator": {
+      "agent_id": "69859356fe576c19864be875",
+      "name": "Receipt Generator",
+      "role": "Credential Certification Specialist",
+      "purpose": "Generate verified skill credentials",
+      "response_schema": "receipt_generator_response.json"
+    },
+    "defense_coordinator": {
+      "agent_id": "69859377fe576c19864be878",
+      "name": "Defense Coordinator",
+      "role": "Oral Defense Facilitator",
+      "purpose": "Coordinate supportive verification upgrades",
+      "response_schema": "defense_coordinator_response.json"
+    }
+  },
+  "fairness_framework": {
+    "core_principles": [
+      "Neutral, non-accusatory language throughout",
+      "Human-in-the-loop for all negative decisions",
+      "3+ pattern requirement before trust impact",
+      "Improvement focus, not punishment",
+      "Oral defense upgrade opportunities",
+      "Public receipts show only positive states"
+    ],
+    "prohibited_actions": [
+      "Automated trust score reductions",
+      "Single-pattern penalties",
+      "Accusatory language",
+      "Hidden decision factors",
+      "Permanent exclusions without appeal"
+    ],
+    "student_rights": [
+      "Transparent data collection",
+      "Opportunity to explain process",
+      "Proactive oral defense requests",
+      "Appeal all decisions",
+      "See all behavioral context",
+      "Control public portfolio visibility"
+    ]
+  },
+  "design_system": {
+    "colors": {
+      "primary": "#0F172A",
+      "secondary": "#334155",
+      "verified": "#10B981",
+      "info": "#3B82F6",
+      "attention": "#F59E0B",
+      "error": "#EF4444"
+    },
+    "language_guidelines": {
+      "use": [
+        "Needs Context",
+        "Highlighted for Review",
+        "Pattern Requires Context",
+        "Verification Pending"
+      ],
+      "avoid": [
+        "Suspicious",
+        "Flagged",
+        "Cheating",
+        "Fraudulent"
+      ]
+    }
+  }
+}

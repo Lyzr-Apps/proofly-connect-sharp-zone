@@ -1,0 +1,52 @@
+{
+  "agent_name": "Receipt Generator",
+  "agent_id": "69859356fe576c19864be875",
+  "test_message": "Generate receipt for approved submission. Task: Data Pipeline Challenge. Student: John Doe. Scores: Quality 86/100, Craftsmanship 82/100, Problem-Solving 88/100. Verification: Independent Work. Skills: Python, ETL, Data Engineering.",
+  "expected_purpose": "Create verified skill credentials",
+  "timestamp": "2026-02-06T07:12:16.101586",
+  "is_valid_json": true,
+  "validation_errors": [],
+  "actual_response": {
+    "status": "success",
+    "result": {
+      "receipt_id": "unique-receipt-12345",
+      "student_info": {
+        "student_id": "mem_cmlafyhi038ah0spd1f4sf0ld",
+        "display_name": "John Doe",
+        "portfolio_url": "https://portfolio.proofly.com/johndoe"
+      },
+      "skill_credential": {
+        "skill_name": "Python, ETL, Data Engineering",
+        "task_title": "Data Pipeline Challenge",
+        "completion_date": "2023-11-29",
+        "authenticity_badge": "Verified Independent Work",
+        "technical_score": 85
+      },
+      "verification": {
+        "verification_hash": "abc123456def",
+        "verification_signature": "signature_xyz987654",
+        "verifiable_url": "https://verify.proofly.com/unique-receipt-12345"
+      },
+      "shareable_formats": {
+        "pdf_url": "https://certificates.proofly.com/unique-receipt-12345.pdf",
+        "digital_badge_url": "https://badges.proofly.com/unique-receipt-12345.png",
+        "json_credential": {
+          "skill_name": "Python, ETL, Data Engineering",
+          "task_title": "Data Pipeline Challenge",
+          "completion_date": "2023-11-29",
+          "authenticity_badge": "Verified Independent Work",
+          "technical_score": 85,
+          "verification_hash": "abc123456def",
+          "verification_signature": "signature_xyz987654"
+        },
+        "embed_code": "<iframe src='https://badges.proofly.com/unique-receipt-12345.png' width='200' height='200'></iframe>"
+      },
+      "portfolio_ready": true
+    },
+    "metadata": {
+      "agent_name": "Receipt Generator",
+      "timestamp": "2023-11-29T12:00:00Z"
+    }
+  },
+  "raw_response": "{\n  \"status\": \"success\",\n  \"result\": {\n    \"receipt_id\": \"unique-receipt-12345\",\n    \"student_info\": {\n      \"student_id\": \"mem_cmlafyhi038ah0spd1f4sf0ld\",\n      \"display_name\": \"John Doe\",\n      \"portfolio_url\": \"https://portfolio.proofly.com/johndoe\"\n    },\n    \"skill_credential\": {\n      \"skill_name\": \"Python, ETL, Data Engineering\",\n      \"task_title\": \"Data Pipeline Challenge\",\n      \"completion_date\": \"2023-11-29\",\n      \"authenticity_badge\": \"Verified Independent Work\",\n      \"technical_score\": 85\n    },\n    \"verification\": {\n      \"verification_hash\": \"abc123456def\",\n      \"verification_signature\": \"signature_xyz987654\",\n      \"verifiable_url\": \"https://verify.proofly.com/unique-receipt-12345\"\n    },\n    \"shareable_formats\": {\n      \"pdf_url\": \"https://certificates.proofly.com/unique-receipt-12345.pdf\",\n      \"digital_badge_url\": \"https://badges.proofly.com/unique-receipt-12345.png\",\n      \"json_credential\": {\n        \"skill_name\": \"Python, ETL, Data Engineering\",\n        \"task_title\": \"Data Pipeline Challenge\",\n        \"completion_date\": \"2023-11-29\",\n        \"authenticity_badge\": \"Verified Independent Work\",\n        \"technical_score\": 85,\n        \"verification_hash\": \"abc123456def\",\n        \"verification_signature\": \"signature_xyz987654\"\n      },\n      \"embed_code\": \"<iframe src='https://badges.proofly.com/unique-receipt-12345.png' width='200' height='200'></iframe>\"\n    },\n    \"portfolio_ready\": true\n  },\n  \"metadata\": {\n    \"agent_name\": \"Receipt Generator\",\n    \"timestamp\": \"2023-11-29T12:00:00Z\"\n  }\n}"
+}

@@ -1,0 +1,129 @@
+{
+  "agent_name": "Trust Score Calculator",
+  "agent_id": "69859337a791e6e318b8df57",
+  "agent_purpose": "trust_score_calculation",
+  "description": "Calculates transparent, improvement-focused trust scores with clear contributing factors and actionable improvement pathways",
+  "response_schema": {
+    "status": "string",
+    "result": {
+      "student_id": "string",
+      "trust_score": "number",
+      "score_level": "string",
+      "contributing_factors": {
+        "verified_independent_work": "number",
+        "verified_with_assistance": "number",
+        "successful_defenses": "number",
+        "consistency_bonus": "number",
+        "improvement_trend": "string"
+      },
+      "improvement_pathways": [
+        {
+          "action": "string",
+          "expected_impact": "string",
+          "description": "string"
+        }
+      ],
+      "score_history": {
+        "previous_score": "number",
+        "change": "string",
+        "trend": "string"
+      },
+      "access_level": "string",
+      "transparency_note": "string"
+    },
+    "metadata": {
+      "agent_name": "string",
+      "timestamp": "string"
+    }
+  },
+  "example_response": {
+    "status": "success",
+    "result": {
+      "student_id": "mem_cmlafyhi038ah0spd1f4sf0ld",
+      "trust_score": 85,
+      "score_level": "high_trust",
+      "contributing_factors": {
+        "verified_independent_work": 9,
+        "verified_with_assistance": 0,
+        "successful_defenses": 0,
+        "consistency_bonus": 7,
+        "improvement_trend": "improving"
+      },
+      "improvement_pathways": [
+        {
+          "action": "Complete the pending submission with a successful explanation",
+          "expected_impact": "moderate",
+          "description": "This will solidify the verification and enhance the trust score by demonstrating clarity and understanding."
+        },
+        {
+          "action": "Continue to work on new independent tasks",
+          "expected_impact": "high",
+          "description": "Consistently verified independent work will further improve reliability and trust levels."
+        },
+        {
+          "action": "Explore diverse skill submissions",
+          "expected_impact": "moderate",
+          "description": "Building a portfolio across multiple skills showcases versatility and can elevate the trust score."
+        }
+      ],
+      "score_history": {
+        "previous_score": 70,
+        "change": "+15",
+        "trend": "improving"
+      },
+      "access_level": "enhanced",
+      "transparency_note": "The score increased due to recent verified independent submissions and consistency in quality work."
+    },
+    "metadata": {
+      "agent_name": "Trust Score Calculator",
+      "timestamp": "2023-11-24T15:45:00Z"
+    }
+  },
+  "is_actual_tested": true,
+  "test_timestamp": "2026-02-06T07:12:11.098087",
+  "test_message_used": "Hello, provide a sample response",
+  "actual_test_response": {
+    "status": "success",
+    "result": {
+      "student_id": "mem_cmlafyhi038ah0spd1f4sf0ld",
+      "trust_score": 85,
+      "score_level": "high_trust",
+      "contributing_factors": {
+        "verified_independent_work": 9,
+        "verified_with_assistance": 0,
+        "successful_defenses": 0,
+        "consistency_bonus": 7,
+        "improvement_trend": "improving"
+      },
+      "improvement_pathways": [
+        {
+          "action": "Complete the pending submission with a successful explanation",
+          "expected_impact": "moderate",
+          "description": "This will solidify the verification and enhance the trust score by demonstrating clarity and understanding."
+        },
+        {
+          "action": "Continue to work on new independent tasks",
+          "expected_impact": "high",
+          "description": "Consistently verified independent work will further improve reliability and trust levels."
+        },
+        {
+          "action": "Explore diverse skill submissions",
+          "expected_impact": "moderate",
+          "description": "Building a portfolio across multiple skills showcases versatility and can elevate the trust score."
+        }
+      ],
+      "score_history": {
+        "previous_score": 70,
+        "change": "+15",
+        "trend": "improving"
+      },
+      "access_level": "enhanced",
+      "transparency_note": "The score increased due to recent verified independent submissions and consistency in quality work."
+    },
+    "metadata": {
+      "agent_name": "Trust Score Calculator",
+      "timestamp": "2023-11-24T15:45:00Z"
+    }
+  },
+  "test_passed": true
+}
