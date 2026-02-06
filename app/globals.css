@@ -73,3 +73,32 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Proofly Custom Colors */
+:root {
+  --proofly-navy: #0F172A;
+  --proofly-slate: #334155;
+  --proofly-trust-green: #10B981;
+  --proofly-info-blue: #3B82F6;
+  --proofly-attention-amber: #F59E0B;
+  --proofly-error-coral: #EF4444;
+}
+
+/* Custom utility classes for Proofly */
+@layer utilities {
+  .trust-score-circle {
+    @apply rounded-full flex items-center justify-center font-bold;
+  }
+
+  .receipt-card {
+    @apply border-2 rounded-lg shadow-md hover:shadow-lg transition-shadow;
+  }
+
+  .fairness-banner {
+    @apply bg-blue-50 border-l-4 border-blue-400 p-4 mb-6;
+  }
+
+  .context-panel {
+    @apply bg-slate-50 border border-slate-200 rounded-lg p-4;
+  }
+}

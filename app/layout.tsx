@@ -6,8 +6,8 @@ import { IframeLoggerInit } from '@/components/IframeLoggerInit'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Next.js App',
-  description: 'Built with Next.js, React, and Tailwind CSS',
+  title: 'Proofly - Trust-Based Skill Verification Platform',
+  description: 'Fair, transparent skill verification with verifiable credentials. Build your portfolio with unique task variants and earn verified skill receipts.',
 }
 
 export default function RootLayout({
